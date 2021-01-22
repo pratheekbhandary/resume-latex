@@ -1,0 +1,236 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Overleaf Link
+% https://www.overleaf.com/project/600a6ebe177355bb1cfc6789
+
+\documentclass[]{deedy-resume-openfont}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+ 
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{Pratheek}{Bhandary}{
+pratheekbhandary@gmail.com |  +91-8660319312
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.25\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education} 
+
+\subsection{NMAMIT}
+\descript{BE in Electronics and Communication}
+\location{June 2015 | Nitte, Karnataka}
+\location{CGPA: 8.23}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Links} 
+\href{https://github.com/pratheekbhandary}{\bf github.com/pratheekbhandary} \\
+\href{https://www.linkedin.com/in/pratheekbhandary}{\bf linkedin.com/in/pratheekbhandary} \\
+\href{https://pratheekbhandary.netlify.app/}{\bf pratheekbhandary.netlify.app} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Skills}
+\subsection{Programming}
+\textbf{Over 5000 lines:}\\
+JavaScript \textbullet{}React \textbullet{}Redux \textbullet{}Relay
+Golang \textbullet{}SCSS \textbullet{}NodeJs \textbullet{} GraphQl
+HTML5 \textbullet{} CSS3\\
+\textbf{Over 1000 lines:}\\
+Python \textbullet{} Next.Js \textbullet{} Docker \textbullet{} PostgreSQL 
+GCP - Cloud Functions | Compute Engine | Cloud Storage \textbullet{} AWS\\
+\textbf{Familiar:}\\
+React-Native \textbullet{} Nginx \textbullet{} Shell
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     CERTIFICATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Certifications}
+\textbullet{} M101JS: MongoDB for Node.js Developers [2018]\\
+\textbullet{} Java Programming [2014]
+\sectionsep
+
+\subsection{Courses}
+\textbullet{} Infosys Training Programme\\
+\textbullet{} Node JS: Advanced Concepts\\
+\textbullet{} Modern React with Redux\\
+\textbullet{} Introduction to D3.js\\
+\sectionsep
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.74\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Payoda
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experience}
+\runsubsection{Payoda Technologies}
+\descript{| Software Engineer}
+\runsubsection{\small{Client: Arista Networks}}
+\location{April 2019 - Present | Bengaluru, KA}
+\smallskip
+
+%Project 1
+\cvproject{Showtech Analyzer}
+Application to analyze showtech (log files from Arista's devices), and highlight critical issues in the device. This has reduced an engineer’s MeanTimeToRespond(MTTR) which is an indicator of increased efficiency.
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Implemented file parsers in Golang to read showtech files and store them in json format, and analyzer to extract relevant data.
+\item Implemented \textbf{GraphQl} queries and mutations, DB CRUD operations using SQLBoiler, a Go ORM for Postgres.
+\item Developed Home page with real time updates to emulate subscriptions only when tab is active and parsing uploaded file in webworker.
+\item Implemented Tasks page UI processing of showtech file using \textbf{React-Relay}, \textbf{TypeScript} and Graphql queries.
+\item Implemented Topology view to illustrate network graph of the device using \textbf{D3.js} force simulation graphs and moved complex path calculation into a webworker, significantly improving the performance.
+\item Implemented a Hook to update pagination states to url (Url filtering feature).
+\item Currently working on hashing files in browser using WASM library to avoid uploading existing files.
+\end{tightemize}
+\smallskip
+
+%Project 2
+\cvproject{Queue View}
+A ReactJS based CRM tool used by Technical Assistance Center engineers.
+\begin{tightemize}
+    \item Built drafts feature using Operational Transforms to save incremental changes on top of RTE QuillJs.
+    \item Implemented cross-tab auth token invalidation, user traffic logs, and admin portal.
+\end{tightemize}
+\smallskip
+
+%Project 3
+\cvproject{Dev Engagements}
+A NextJs based wrapper on AWS S3 bucket to upload, download, move and copy case
+attachments. Also handled the deployment of the app in EC2 using pm2.
+\smallskip
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Infy
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\runsubsection{Infosys}
+\descript{| Technology Analyst }
+\location{Aug 2015 – April 2019 | Mangaluru, KA}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\cvproject{Allstate Insurance Portal}
+Rebuilt the Allstate Insurance application using the latest technologies like React, Redux.
+\begin{tightemize}
+\item Re-wrote Reports page improving the load time, which got appreciation from the product manager.
+\item Mentored and trained junior developers, collaborated with other teams and integrated components delivered by them to make it work seamlessly with our application. 
+\item Created a tool to save the redux state into Indexed DB, improving the developer experience during unit tests.
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Aptean
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\runsubsection{Aptean}
+\descript{| Quality Assurance Intern }
+\location{Feb 2015 – Aug 2015 | Bengaluru, KA}
+% \vspace{\topsep} % Hacky fix for awkward extra vertical space
+% \cvproject{Ross}
+% ERP application which handles food processing from raw materials in inventory to shipping of finished goods.
+% \begin{tightemize}
+% \item Black box testing the application to find issues, Test case creation, Regression testing.
+% \item Worked on release cycles; continuous interaction with the developer as a feature was being developed, this resulted in a short developer-testing roundabout. 
+% \end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Personal Projects
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Personal Projects}
+\begin{tabular}{cl}
+
+\textbf{2018} & \makecell[l]{Hotel management application that collects orders and notifies\\
+the food court. \small{\textbf{Tech Stack}: React-Redux, Firebase, React-Native, Expo.}}\\
+
+\textbf{2018} & \makecell[l]{Portal for hackathon registration with file upload feature.\\
+\small{\textbf{Tech Stack}: React-Redux, Express, Typescript, MongoDB.}}\\
+
+\textbf{2020} & \makecell[l]{Portfolio website with emphasis on using CSS and JS animations\\
+deployed in netlify.\small{\textbf{Tech Stack}: React, CSS3.}}\\
+
+\textbf{2021} & \makecell[l]{Currently working on a tool to take notes during lectures and meetings using\\ Google STT and also differentiate voices (inspired from fireflies.ai)\\ \small{\textbf{Tech Stack}: React-Relay, Golang, Google cloud sdk.}}\\
+\end{tabular}
+
+\sectionsep
+\nocite{*}
+
+\end{minipage} 
+\end{document}  \documentclass[]{article}
